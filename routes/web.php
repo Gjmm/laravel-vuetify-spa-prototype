@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\api\v1\Users;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('spa', [App\Http\Controllers\HomeController::class, 'index']);
 });
+
+Route::get('/api/users', [Users::class, 'test'])->name('api.users');
 
 Auth::routes();
 
